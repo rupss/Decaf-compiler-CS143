@@ -1,0 +1,14 @@
+class Stack { 
+      void Pop() { 
+      int val; 
+      val = 54; 
+      Print(val); 
+      }
+}
+
+int main() 
+{   
+    Stack s; 
+    s = new Stack;	
+    s.Pop(); 
+}

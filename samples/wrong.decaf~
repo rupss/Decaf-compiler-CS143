@@ -1,0 +1,37 @@
+class Animal {
+
+  void Method1() {
+    Print("Animal");
+  }
+
+ 
+}
+
+class Cow extends Animal{
+
+   void Method1() {
+    Print("Cow");
+  }
+
+
+}
+class Jersey extends Cow {
+
+
+   void Method1() {
+      Print("Jersey");
+   }
+}
+
+int main() {
+  Cow a;
+  Jersey j;
+
+   a = new Cow;
+ 
+  j = new Jersey;
+  a = j;
+ 
+  a.Method1();
+
+}

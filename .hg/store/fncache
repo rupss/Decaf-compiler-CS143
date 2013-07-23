@@ -1,0 +1,15 @@
+data/ast.cc.i
+data/ast.h.i
+data/ast_decl.cc.i
+data/ast_decl.h.i
+data/ast_expr.cc.i
+data/ast_expr.h.i
+data/ast_stmt.cc.i
+data/ast_stmt.h.i
+data/ast_type.cc.i
+data/ast_type.h.i
+data/codegen.cc.i
+data/codegen.h.i
+data/parser.y.i
+data/scanner.l.i
+data/README.i

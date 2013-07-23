@@ -1,0 +1,32 @@
+void main()
+{
+  Rupa r; 
+  r = new Rupa; 
+  r.SetArr(); 
+ // r.PrintArr(); 
+}
+
+class Rupa {
+     int[] arr; 
+     Rupa r; 
+     void SetArr() { 
+     int i; 
+      r = new Rupa; 
+     r.arr = NewArray(5, int); 
+ //    r.arr[0] = 0; 
+   //  Print(r.arr[0]); 
+   Print(r.arr.length()); 
+/*
+     for (i = 0; i < r.arr.length(); i=i+1) {
+     	 r.arr[i] = i;
+	// Print(r.arr[i]); 
+     }*/
+    }
+
+/*
+    void PrintArr() {
+    int i;  
+    for (i = 0; i < r.arr.length(); i=i+1)
+     	Print(r.arr[i]); 
+    }*/
+}

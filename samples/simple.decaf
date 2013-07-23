@@ -1,0 +1,33 @@
+void main() 
+{
+  Rupa rp; 
+  rp = new Rupa; 
+  rp.SetRupa(); 
+  rp.SetHrs();  
+  rp.PrintAll(); 
+ 
+
+}
+
+class Rupa {
+  int hrs;
+  Rupa r; 
+
+  void SetRupa() {
+  r = new Rupa;
+ 
+ }
+
+  void SetHrs() {
+   r.r = new Rupa;  
+   r.r.hrs = 10; 
+ //  Print(r.r.hrs); 
+ // r.hrs = 10; 
+ // Print(r.hrs);
+ }
+  void PrintAll() { 
+  Print(r.r.hrs); 
+}
+
+  
+}

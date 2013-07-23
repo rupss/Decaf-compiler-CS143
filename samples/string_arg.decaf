@@ -1,0 +1,15 @@
+int main() 
+{ 
+  
+  string str; 
+  str = "hey"; 
+  Print(str);
+
+  P("hey"); 
+
+}
+
+void P(string str)
+{
+	Print(str); 
+}

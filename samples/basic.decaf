@@ -1,0 +1,16 @@
+
+
+class Rupa { 
+      int a; 
+      int b; 
+    void PrintAll() {
+    	 a = 10; 
+	 Print(a); 
+	 }
+} 
+
+int main() { 
+  Rupa r; 
+  r = new Rupa; 
+  r.PrintAll(); 
+}

@@ -1,0 +1,17 @@
+Name: Rupa Shankar
+Email: rupss@stanford.edu
+SUID: rupss
+
+My naming scheme is that my main function is labeled "main", global
+function are labeled "_globalfunctionname", and methods are labeled
+"_Classname.Methodname". 
+
+Otherwise, this extends onto the functionality that I built for pp3. I
+store the scoping information, the current class, and all of the other
+information that I used and/or collected during the semantic analysis for
+each node in that same node during semantic analysis. That way, on the
+next tree traversal for code generation, this information is all set up
+and ready for the code generator to use. 
+
+The code generation revolves around the virtual Emit function, but I also
+use a lot of helper functions such as MakeLocation, ReadValue, etc. 

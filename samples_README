@@ -1,0 +1,5 @@
+There are three directories of samples for pp4. Each *.decaf file has
+a corresponding *.out file that shows the output from running the
+SPIM simulator on the generated MIPS assembly. A few files are
+interactive (require user input) and thus don't have pre-determined
+output since it depends on what you input.

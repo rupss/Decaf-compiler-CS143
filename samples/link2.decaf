@@ -1,0 +1,10 @@
+class Foo {
+	void main() { Print("Foo main"); }
+}
+
+int main()
+{
+   Foo f;
+   f = new Foo;
+   f.main();
+}

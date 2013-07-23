@@ -1,0 +1,98 @@
+class House {
+  Player[] players;
+  Player dealer;
+  BJDeck deck;
+
+
+  void SetupGame() {
+    Print("\nWelcome to CS143 BlackJack!\n");
+    Print("---------------------------\n");
+    gRnd = new Random;
+    Print("Please enter a random number seed: ");
+    gRnd.Init(ReadInteger());
+ 
+    deck = new BJDeck;
+    dealer = new Dealer;
+    deck.Init();
+    deck.Shuffle();
+  }
+
+  void SetupPlayers() {
+    int i;
+    int numPlayers;
+    Print("How many players do we have today? ");
+    numPlayers = ReadInteger();
+    players = NewArray(numPlayers, Player);
+    for (i = 0; i < players.length(); i = i + 1) {
+      players[i] = new Player;
+      players[i].Init(i+1);
+    }
+  }
+
+  void TakeAllBets() {
+    int i;
+    Print("\nFirst, let's take bets.\n");
+    for (i = 0; i < players.length(); i = i + 1)
+      if (players[i].HasMoney()) players[i].PlaceBet();
+  }
+
+  void TakeAllTurns() {
+    int i;
+    for (i = 0; i < players.length(); i = i + 1)
+      if (players[i].HasMoney()) players[i].TakeTurn(deck);
+  }
+
+  void ResolveAllPlayers() {
+    int i;
+
+    Print("\nTime to resolve bets.\n");
+    for (i = 0; i < players.length(); i = i + 1)
+      if (players[i].HasMoney())
+        players[i].Resolve(dealer.GetTotal());
+  }
+
+  void PrintAllMoney() {
+    int i;
+
+    for (i = 0; i < players.length(); i = i + 1)
+      players[i].PrintMoney();
+
+  }
+
+  void PlayOneGame() {
+    if (deck.NumCardsRemaining() < 26) deck.Shuffle();
+    TakeAllBets();
+    Print("\nDealer starts. ");
+    dealer.Init(0);
+    dealer.Hit(deck);
+    TakeAllTurns();
+    dealer.TakeTurn(deck);
+    ResolveAllPlayers();
+  }
+
+}
+
+bool GetYesOrNo(string prompt)
+{
+   string answer;
+   Print(prompt, " (y/n) ");
+   answer = ReadLine();
+   return (answer == "y" || answer == "Y");
+}
+
+int main() {
+  bool keepPlaying;
+  House house;
+  keepPlaying = true;
+  house = new House;
+  house.SetupGame();
+  house.SetupPlayers();
+  while (keepPlaying) {
+    house.PlayOneGame();
+    keepPlaying = GetYesOrNo("\nDo you want to play another hand?");
+  }
+  house.PrintAllMoney();
+  Print("Thank you for playing...come again soon.\n");
+  Print("\nCS143 BlackJack Copyright (c) 1999 by Peter Mork.\n");
+  Print("(2001 mods by jdz)\n");
+}

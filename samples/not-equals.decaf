@@ -1,0 +1,6 @@
+int main() {
+
+   bool b; 
+   b = 3 != 3; 
+   Print(b); 
+  }
