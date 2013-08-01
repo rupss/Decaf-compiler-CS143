@@ -15,8 +15,22 @@ use a lot of helper functions such as MakeLocation, ReadValue, etc.
 Notes on the semantic analyzer: 
 
 My semantic analyzer passes down scopes via arguments as it traverses the parse tree. 
-It makes 2 passes. The first pass is merely to "fill up" the scopes for each class and interface so that on the second pass, we actually have something to compare to. The second pass is when all o the rest of the scope checking and type checking takes place. Because the class and interface scope information is in the process of being collected in the first pass, my program only ever prints error messages on the second pass. 
+It makes 2 passes. The first pass is merely to "fill up" the scopes for each class 
+and interface so that on the second pass, we actually have something to compare to. 
+The second pass is when all o the rest of the scope checking and type checking takes 
+place. Because the class and interface scope information is in the process of being 
+collected in the first pass, my program only ever prints error messages on the second 
+pass. 
 
-My semantic analyzer initially checks for any declaration conflicts with global variable names, adds all the acceptable ones to the global scope, and then scope checks and type checks the variables themselves (i.e. the body of a function/class/interface, the type of a VarDecl, etc) which then recursively check their various components. 
+My semantic analyzer initially checks for any declaration conflicts with global variable 
+names, adds all the acceptable ones to the global scope, and then scope checks and type 
+checks the variables themselves (i.e. the body of a function/class/interface, the type 
+of a VarDecl, etc) which then recursively check their various components. 
 
-As for error cascading, I used Type::errorType a lot to try and prevent this. In a lot of cases, I set the type of a semantically incorrect node to Type::errorType and set rules that allowed Type::errorType to make it through successfully in most situations. In other situations, such as if the condition in a while loop has an undeclared variable in an equality statement, I just set the type to be boolType anyways after reporting the error so that the rest of the analysis goes through correctly (because equality statements always have type boolType). 
+As for error cascading, I used Type::errorType a lot to try and prevent this. In a lot of 
+cases, I set the type of a semantically incorrect node to Type::errorType and set rules 
+that allowed Type::errorType to make it through successfully in most situations. In other 
+situations, such as if the condition in a while loop has an undeclared variable in an 
+equality statement, I just set the type to be boolType anyways after reporting the error 
+so that the rest of the analysis goes through correctly (because equality statements always 
+have type boolType). 
