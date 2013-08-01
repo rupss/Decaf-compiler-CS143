@@ -5,7 +5,7 @@ Assignment handout: http://www.stanford.edu/class/archive/cs/cs143/cs143.1128/ha
 This is a working compiler for Decaf (https://parasol.tamu.edu/courses/decaf/students/decafOverview.pdf),
 an object oriented programming language similar to Java but smaller in scope. 
 
-Usage: ./run
+Usage: ./run <decaf file name>
 
 Notes on the TAC generator: 
 
