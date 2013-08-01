@@ -1,3 +1,14 @@
+CS143 (Compilers), Summer 2012
+
+Assignment handout: http://www.stanford.edu/class/archive/cs/cs143/cs143.1128/handouts/250%20Assignment%204.pdf
+
+This is a working compiler for Decaf (https://parasol.tamu.edu/courses/decaf/students/decafOverview.pdf),
+an object oriented programming language similar to Java but smaller in scope. 
+
+Usage: ./run
+
+Notes on the TAC generator: 
+
 My naming scheme is that my main function is labeled "main", global
 function are labeled "_globalfunctionname", and methods are labeled
 "_Classname.Methodname". 
